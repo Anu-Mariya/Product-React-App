@@ -3,10 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import NavigationBar from "./components/NavigationBar";
 import AddProduct from './components/AddProduct'
 import SearchProduct from './components/SearchProduct'
 import DeleteProduct from './components/DeleteProduct'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ViewProducts from './components/ViewProducts'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +20,7 @@ function App() {
         <Route path='/' element={<AddProduct/>} />
         <Route path='/search' element={<SearchProduct/>} />
         <Route path='/delete' element={<DeleteProduct/>} />
+        <Route path='/viewproducts' element={<ViewProducts/>} />
    </Routes>
    </BrowserRouter>
     </>

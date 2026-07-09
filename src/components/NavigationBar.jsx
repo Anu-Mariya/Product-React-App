@@ -14,6 +14,7 @@ const NavigationBar = () => {
         <a class="nav-link active" aria-current="page" href="/">AddProducts</a>
         <a class="nav-link" href="/search">SearchProduct</a>
         <a class="nav-link" href="/delete">DeleteProduct</a>
+        <a class="nav-link" href="/Viewproducts">ViewProducts</a>
       </div>
     </div>
   </div>
