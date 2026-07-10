@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationBar from "./NavigationBar";
 
 const ViewProducts = () => {
+
+  const [data, changeData] = useState(
+    [
+      { "ProductName": "DoveBar", "avatar": "https://tse3.mm.bing.net/th/id/OIP.TYQPyjlrVjGQ2DUCXNbTLQHaHa?r=0&pid=Api&P=0&h=180", "category": "MCA" ,"produCode": "123" ,"price":50},
+      { "ProductName": "Lipstick", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbUigKWEy4PtSbgsY5UeuWbPcfmtnFgCzs0a8jnqCUmw&s=10", "category": "MBA" ,"produCode": "132" ,"price":600},
+      { "ProductName": "Kitchen Utensils", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnlV6igYuyOwf2pJ4jyqfVNnMqq5ba7bFNOnrRp54JdQ&s=10", "category": "MSC" ,"produCode": "231" ,"price":150},
+      { "ProductName": "BodyWash", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQrXv63GkTaFmq6zYQn7iz2lzzYm03Vq0rylwpolxcGQ&s=10", "category": "MCA" ,"produCode": "423" ,"price":450},
+      { "ProductName": "Frock", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS10Y-TmrTrtI4mPnVG4Eqqt8r466cv47vcQG3JeqF9OA&s=10", "category": "MBA" ,"produCode": "112" ,"price":500}
+    ]
+  )
   return (
     <div>
       <NavigationBar />
@@ -9,165 +19,34 @@ const ViewProducts = () => {
       <div className="container mt-4">
         <div className="row g-4">
 
+          {data.map(
+             (value,index) =>
+               { return(
+               
           <div className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="card h-100 shadow-sm">
               <img
-                src="https://tse3.mm.bing.net/th/id/OIP.TYQPyjlrVjGQ2DUCXNbTLQHaHa?r=0&pid=Api&P=0&h=180"
+                src={value.avatar}
                 className="card-img-top"
                 alt="Dove Bar"
                 style={{ height: "220px", objectFit: "cover" }}
               />
               <div className="card-body text-center">
-                <h5 className="card-title">Dove Bar</h5>
-                <p className="card-text fw-bold">Rs. 45</p>
+                <h5 className="card-title">
+                  {value.ProductName}
+                </h5>
+                <p className="card-text fw-bold">
+                  {value.price}
+                </p>
                 <button className="btn btn-success w-100">Add to Cart</button>
               </div>
             </div>
           </div>
 
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=500"
-                className="card-img-top"
-                alt="Fiama Body Wash"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Fiama Body Wash</h5>
-                <p className="card-text fw-bold">Rs. 110</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+               )
 
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://tse1.mm.bing.net/th/id/OIP.cbHERhOfK8TKLQnKv_P6YAHaHa?r=0&pid=Api&P=0&h=180"
-                className="card-img-top"
-                alt="Marie Gold"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Marie Gold</h5>
-                <p className="card-text fw-bold">Rs. 20</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://tse2.mm.bing.net/th/id/OIP.klUSCi6nBVwbVwAwP0C02AHaHa?r=0&pid=Api&P=0&h=180"
-                className="card-img-top"
-                alt="Tang"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Tang</h5>
-                <p className="card-text fw-bold">Rs. 45</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://tse3.mm.bing.net/th/id/OIP.XJn9He9WkcCcbapWmAvr0gHaDj?r=0&pid=Api&P=0&h=180"
-                className="card-img-top"
-                alt="Milma Ghee"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Milma Ghee</h5>
-                <p className="card-text fw-bold">Rs. 30</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://tse3.mm.bing.net/th/id/OIP.ByHnKOIjTARSZ-c9Qa0-sQHaHa?r=0&pid=Api&P=0&h=180"
-                className="card-img-top"
-                alt="Dairy Milk"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Dairy Milk</h5>
-                <p className="card-text fw-bold">Rs. 20</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://tse1.mm.bing.net/th/id/OIP.gVAu4DYogNAJAhgzGZZETgHaHa?r=0&pid=Api&P=0&h=180"
-                className="card-img-top"
-                alt="Elite Milk Rusk"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Elite Milk Rusk</h5>
-                <p className="card-text fw-bold">Rs. 120</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500"
-                className="card-img-top"
-                alt="Rice"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Phone</h5>
-                <p className="card-text fw-bold">Rs. 70000</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500"
-                className="card-img-top"
-                alt="Coffee"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Coffee</h5>
-                <p className="card-text fw-bold">Rs. 180</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500"
-                className="card-img-top"
-                alt="Tea"
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Tea Powder</h5>
-                <p className="card-text fw-bold">Rs. 95</p>
-                <button className="btn btn-success w-100">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+            }
+          )}
 
         </div>
       </div>
